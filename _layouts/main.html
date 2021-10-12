@@ -6,19 +6,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{site.title}}</title>
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="{{site.baseurl}}/css/site.css">
 </head>
 
 <body>
   <div class="site">
     <header class="site-header">
-      <h1 class="site-title"><a href="/">{{site.title}}</a></h1>
-      <nav>
+      {% if page.home == true %}
+      <h1 class="site-title"><a href="{{site.baseurl}}/">{{site.title}}</a></h1>
+      {% else %}
+      <p class="site-title"><a href="{{site.baseurl}}/">{{site.title}}</a></p>
+      {% endif %}
+      <nav class="site-nav">
         <ul>
           {% for page in site.pages %}
           {% if page.title %}
           <li>
-            <a href="{{ page.url }}">{{ page.title }}</a>
+            <a href="{{site.baseurl}}{{ page.url }}">{{ page.title }}</a>
           </li>
           {% endif %}
           {% endfor %}
@@ -35,8 +39,7 @@
 
     </aside>
     <footer class="site-footer">
-      <h6>{{site.title}}</h6>
-      <p>All rights reserved &copy; Thelazyperson</p>
+      <p>All rights reserved &copy; {{site.title}}</p>
     </footer>
   </div>
 </body>
