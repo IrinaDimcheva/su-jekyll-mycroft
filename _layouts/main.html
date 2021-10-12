@@ -5,11 +5,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{site.title}}</title>
-  <link rel="stylesheet" href="{{site.baseurl}}/css/site.css">
+  <title>{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ site.baseurl }}/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/site.css">
 </head>
 
-<body>
+<body class="
+  {% if page.title %}page page-{{ page.title | slugify }}{% endif %}
+  {% if post.title %}post{% endif %}
+  {% if page.home %}home{% endif %}
+">
   <div class="site">
     <header class="site-header">
       {% if page.home == true %}
@@ -25,9 +30,7 @@
       {% endif %}
       {{ content }}
     </main>
-    <aside class="site-sidebar">
-
-    </aside>
+    {% include sidebar.html %}
     <footer class="site-footer">
       <p>All rights reserved &copy; {{ site.title }}</p>
       {% include navigation.html location="footer" %}

@@ -3,7 +3,10 @@
     {% for page in site.pages %}
     {% if page.title %}
     <li>
-      <a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
+      <a href="{{ site.baseurl }}{{ page.url }}">
+        {% if page.icon %}<i class="fas {{ page.icon }}"></i>{% endif %}
+        {{ page.title }}
+      </a>
     </li>
     {% endif %}
     {% endfor %}

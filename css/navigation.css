@@ -28,3 +28,8 @@
   background: var(--color-link-default);
   color: var(--color-body-bg);
 }
+
+.site-nav a i.fas::before {
+  color: #000;
+  margin-right: 0.5em;
+}
