@@ -13,33 +13,24 @@
   <div class="site">
     <header class="site-header">
       {% if page.home == true %}
-      <h1 class="site-title"><a href="{{site.baseurl}}/">{{site.title}}</a></h1>
+      <h1 class="site-title"><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
       {% else %}
-      <p class="site-title"><a href="{{site.baseurl}}/">{{site.title}}</a></p>
+      <p class="site-title"><a href="{{ site.baseurl }}/">{{ site.title }}</a></p>
       {% endif %}
-      <nav class="site-nav">
-        <ul>
-          {% for page in site.pages %}
-          {% if page.title %}
-          <li>
-            <a href="{{site.baseurl}}{{ page.url }}">{{ page.title }}</a>
-          </li>
-          {% endif %}
-          {% endfor %}
-        </ul>
-      </nav>
+      {% include navigation.html location="header" %}
     </header>
     <main class="site-main">
       {% if page.title %}
-      <h1>{{page.title}}</h1>
+      <h1>{{ page.title }}</h1>
       {% endif %}
-      {{content}}
+      {{ content }}
     </main>
     <aside class="site-sidebar">
 
     </aside>
     <footer class="site-footer">
-      <p>All rights reserved &copy; {{site.title}}</p>
+      <p>All rights reserved &copy; {{ site.title }}</p>
+      {% include navigation.html location="footer" %}
     </footer>
   </div>
 </body>
