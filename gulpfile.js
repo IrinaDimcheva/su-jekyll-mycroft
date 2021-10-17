@@ -40,4 +40,5 @@ gulp.task('watch', function () {
   gulp.watch('docs/**/*.js').on('change', browserSync.reload);
 });
 
+gulp.task('deploy', gulp.series('jekyll', 'css'));
 gulp.task('default', gulp.series('jekyll', 'css', 'watch'));
