@@ -22,6 +22,7 @@ title: Mycroft's musings ...
 email: koko@example.com
 description: I am lazy!
 destination: docs
+# baseurl: "" # the subpath of your site, e.g. /blog
 baseurl: "/su-jekyll-mycroft" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: idimcheva
@@ -52,3 +53,7 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - docs
+  - _assets
+  - gulpfile.js
+  - package.json
+  - package-lock.json
